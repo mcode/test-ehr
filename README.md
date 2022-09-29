@@ -24,7 +24,7 @@ The FHIR server is open by default, but this can be changed in the `fhirServer.p
 
 First, change the `use_oauth` flag to `true` to turn on security.  Then set the `client_id`, `client_secret`, and `oauth_token` fields.
 
-If using Keycloak and following the [CRD](https://github.com/HL7-DaVinci/CRD) guide, the `client_id` and `oauth_token` fields can be left as default.  The `client_secret` can be found with the following steps:
+If using Keycloak and following the [CRD](https://github.com/mcode/CRD) guide, the `client_id` and `oauth_token` fields can be left as default.  The `client_secret` can be found with the following steps:
 
 1) Open the keycloak admin console (http://localhost:8180/auth) and log in
 2) Open the ClientFhirServer, then the `clients` tab, and click `app-token`.  
