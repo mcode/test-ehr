@@ -42,8 +42,10 @@ bootRun {
 
 
 dependencies {
+
     implementation "io.github.http-builder-ng:http-builder-ng-core:1.0.3"
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     implementation 'org.eclipse.jetty.websocket:websocket-api:9.4.24.v20191120'
     implementation 'org.eclipse.jetty.websocket:websocket-client:9.4.24.v20191120'

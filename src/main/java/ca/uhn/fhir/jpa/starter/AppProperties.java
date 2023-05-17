@@ -76,7 +76,7 @@ public class AppProperties {
   private Boolean use_apache_address_strategy_https = false;
 
   @Bean
-  public ClientAuthorizationInterceptor clientAuthorizationInterceptor(){
+  public ClientAuthorizationInterceptor getClientAuthorizationInterceptor(){
     return new ClientAuthorizationInterceptor();
   }
 
