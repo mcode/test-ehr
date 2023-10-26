@@ -51,11 +51,11 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.11'
     implementation 'org.postgresql:postgresql:42.2.9'
     implementation 'com.sun.mail:javax.mail:1.6.1'
-    implementation 'ca.uhn.hapi.fhir:hapi-fhir-base:5.4.0'
-    implementation 'ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:5.4.0'
-    implementation 'ca.uhn.hapi.fhir:hapi-fhir-jpaserver-cql:5.4.0'
-    implementation 'ca.uhn.hapi.fhir:hapi-fhir-jpaserver-mdm:5.4.0'
-    implementation 'ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:5.4.0'
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-base:6.4.3'
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:6.4.2'
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-jpaserver-cql:6.2.5'
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-jpaserver-mdm:6.4.3'
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:6.4.3'
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation ('org.springframework.boot:spring-boot-starter-web'){
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
@@ -90,14 +90,11 @@ dependencies {
     testImplementation 'org.eclipse.jetty:jetty-server:9.4.24.v20191120'
     testImplementation 'org.eclipse.jetty:jetty-util:9.4.24.v20191120'
     testImplementation 'org.eclipse.jetty:jetty-webapp:9.4.24.v20191120'
-    testImplementation 'ca.uhn.hapi.fhir:hapi-fhir-test-utilities:4.2.0'
+    testImplementation 'ca.uhn.hapi.fhir:hapi-fhir-test-utilities:6.4.3'
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
     testImplementation 'org.mockito:mockito-core:3.2.0'
-    //implementation 'ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:4.2.0:war'
-    implementation 'ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:4.2.0:classes'
-//    providedImplementation 'javax.servlet:javax.servlet-api:3.1.0'
-   // implementation group:'org.apache.tomcat', name:'tomcat-juli', version:property('tomcat.version')
+    implementation 'ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:6.4.3:classes'
     implementation 'javax.interceptor:javax.interceptor-api:1.2.2'
 }
 
