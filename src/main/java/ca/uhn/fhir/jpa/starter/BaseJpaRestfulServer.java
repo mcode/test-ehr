@@ -9,13 +9,14 @@ import ca.uhn.fhir.interceptor.api.IInterceptorService;
 import ca.uhn.fhir.jpa.api.config.DaoConfig;
 import ca.uhn.fhir.jpa.api.dao.DaoRegistry;
 import ca.uhn.fhir.jpa.api.dao.IFhirSystemDao;
-import ca.uhn.fhir.jpa.binstore.BinaryStorageInterceptor;
+import ca.uhn.fhir.jpa.binary.interceptor.BinaryStorageInterceptor;
 import ca.uhn.fhir.jpa.bulk.export.provider.BulkDataExportProvider;
+import ca.uhn.fhir.jpa.delete.ThreadSafeResourceDeleterSvc;
 import ca.uhn.fhir.jpa.interceptor.CascadingDeleteInterceptor;
 import ca.uhn.fhir.jpa.packages.IPackageInstallerSvc;
 import ca.uhn.fhir.jpa.packages.PackageInstallationSpec;
 import ca.uhn.fhir.jpa.partition.PartitionManagementProvider;
-import ca.uhn.fhir.jpa.provider.GraphQLProvider;
+import ca.uhn.fhir.jpa.graphql.GraphQLProvider;
 import ca.uhn.fhir.jpa.provider.IJpaSystemProvider;
 import ca.uhn.fhir.jpa.provider.JpaCapabilityStatementProvider;
 import ca.uhn.fhir.jpa.provider.JpaConformanceProviderDstu2;
@@ -56,6 +57,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.web.cors.CorsConfiguration;
 
 import javax.servlet.ServletException;
@@ -106,6 +108,8 @@ public class BaseJpaRestfulServer extends RestfulServer {
   AppProperties appProperties;
   @Autowired
   ApplicationContext myApplicationContext;
+  @Autowired
+  ThreadSafeResourceDeleterSvc threadSafeResourceDeleterSvc;
 
   @Autowired
   ClientAuthorizationInterceptor interceptor;
@@ -329,8 +333,12 @@ public class BaseJpaRestfulServer extends RestfulServer {
 
 
     if (appProperties.getAllow_cascading_deletes()) {
-      CascadingDeleteInterceptor cascadingDeleteInterceptor = new CascadingDeleteInterceptor(ctx,
-        daoRegistry, interceptorBroadcaster);
+      CascadingDeleteInterceptor cascadingDeleteInterceptor = new CascadingDeleteInterceptor(
+          ctx,
+          daoRegistry,
+          interceptorBroadcaster,
+          threadSafeResourceDeleterSvc
+      );
       getInterceptorService().registerInterceptor(cascadingDeleteInterceptor);
     }
 
