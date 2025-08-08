@@ -56,3 +56,35 @@ The `launchId` is a unique ID which lets the SMART app maintain its state throug
 | `/test-ehr/r4` | EHR FHIR Server endpoint (will not resolve in browser) |
 | `/test-ehr/script/rxfill` | NCPDP SCRIPT endpoint that RxFill messages from the pharmacy can be sent to (will not resolve in browser) |
 | `/_services/smart/Launch` | SMART on FHIR endpoint which produces a launch ID for SMART apps to use when launching |
+
+# Data Rights
+
+<div style="text-align:center">
+<b>NOTICE</b>
+</div>
+
+This (software/technical data) was produced for the U. S. Government under Contract Number 75FCMC18D0047/75FCMC23D0004, and is subject to Federal Acquisition Regulation Clause 52.227-14, Rights in Data-General.
+
+
+No other use other than that granted to the U. S. Government, or to those acting on behalf of the U. S. Government under that Clause is authorized without the express written permission of The MITRE Corporation.
+
+
+For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA 22102-7539, (703) 983-6000.
+
+<div style="text-align:center">
+<b>&copy;2025 The MITRE Corporation.</b>
+</div>
+
+<br />
+
+Licensed under the Apache License, Version 2.0 (the "License"); use of this repository is permitted in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
