@@ -58,6 +58,7 @@ The `launchId` is a unique ID which lets the SMART app maintain its state throug
 | `/_services/smart/Launch` | SMART on FHIR endpoint which produces a launch ID for SMART apps to use when launching |
 
 # Data Rights
+This repository has been forked from the [HL7-DaVinci/test-ehr](https://github.com/HL7-DaVinci/test-ehr) repository. As such, the following data rights apply to all changes made on this fork of the repository, starting with release 0.1 and onward.
 
 <div style="text-align:center">
 <b>NOTICE</b>
