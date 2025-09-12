@@ -1,0 +1,17 @@
+{
+  "resourceType": "Organization",
+  "id": "pharm0111",
+  "active": true,
+  "name": "Test Pharmacy",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://nucc.org/provider-taxonomy",
+          "code": "3336C0003X",
+          "display": "Community/Retail Pharmacy"
+        }
+      ]
+    }
+  ]
+}
