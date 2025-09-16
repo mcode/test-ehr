@@ -1,8 +1,19 @@
 {
-  "resourceType": "Organization",
+  "resourceType": "HealthcareService",
   "id": "pharm0111",
   "active": true,
   "name": "Test Pharmacy",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/service-category",
+          "code": "17",
+          "display": "Pharmacy"
+        }
+      ]
+    }
+  ],
   "type": [
     {
       "coding": [
