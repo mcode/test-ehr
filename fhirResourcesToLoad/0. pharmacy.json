@@ -28,7 +28,7 @@
   "location": [
     {
       "reference": "Location/pharm-location-001",
-      "display": "Test Pharmacy - Main Location"
+      "display": "123 Main Street, Anytown, CA 12345"
     }
   ]
 }
