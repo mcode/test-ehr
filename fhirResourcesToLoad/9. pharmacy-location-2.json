@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "pharm-location-001",
+  "status": "active",
+  "name": "Test Pharmacy - Secondary Location",
+  "description": "Secondary location for Test Pharmacy providing community pharmacy services",
+  "mode": "instance",
+  "address": {
+    "use": "work",
+    "type": "physical",
+    "line": [
+      "561 Street Road"
+    ],
+    "city": "Anytown",
+    "state": "CA",
+    "postalCode": "12345",
+    "country": "US"
+  },
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+1-555-123-4567",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@testpharmacy.com",
+      "use": "work"
+    }
+  ]
+}
