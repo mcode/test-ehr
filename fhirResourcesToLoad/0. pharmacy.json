@@ -8,8 +8,8 @@
       "coding": [
         {
           "system": "http://terminology.hl7.org/CodeSystem/service-category",
-          "code": "17",
-          "display": "Pharmacy"
+          "code": "12",
+          "display": "Drug/Alcohol"
         }
       ]
     }
@@ -18,11 +18,17 @@
     {
       "coding": [
         {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "3336C0003X",
-          "display": "Community/Retail Pharmacy"
+          "system": "http://terminology.hl7.org/CodeSystem/service-type",
+          "code": "64",
+          "display": "Pharmacy"
         }
       ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/pharm-location-001",
+      "display": "Test Pharmacy - Main Location"
     }
   ]
 }
