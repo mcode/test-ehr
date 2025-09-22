@@ -533,13 +533,13 @@
   }, {
     "id" : "d6999f64-7165-4742-8a69-44f719d6783f",
     "createdTimestamp" : 1654609729216,
-    "username" : "jonsnow",
+    "username" : "johnsnow",
     "enabled" : true,
     "totp" : false,
     "emailVerified" : false,
-    "firstName" : "Jon",
+    "firstName" : "John",
     "lastName" : "Snow",
-    "email" : "jon@example.com",
+    "email" : "john@example.com",
     "attributes" : {
       "patientId" : [ "pat017" ],
       "userId" : [ "pat017" ]

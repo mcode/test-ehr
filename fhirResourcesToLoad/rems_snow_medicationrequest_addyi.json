@@ -18,7 +18,7 @@
   "intent": "order",
   "subject": {
     "reference": "Patient/pat017",
-    "display": "Jon Snow"
+    "display": "John Snow"
   },
   "authoredOn": "2024-02-29",
   "requester": {

@@ -22,12 +22,12 @@
     },
     "subject": {
         "reference": "Patient/pat017",
-        "display": "Jon Snow"
+        "display": "John Snow"
     },
     "effectiveDateTime": "2021-03-20",
     "dateAsserted": "2021-03-22",
     "informationSource": {
         "reference": "Patient/pat017",
-        "display": "Jon Snow"
+        "display": "John Snow"
     }
 }

@@ -75,13 +75,13 @@
     },
     "subject": {
         "reference": "Patient/pat017",
-        "display": "Jon Snow"
+        "display": "John Snow"
     },
     "effectiveDateTime": "2020-07-10",
     "dateAsserted": "2020-07-22",
     "informationSource": {
         "reference": "Patient/pat017",
-        "display": "Jon Snow"
+        "display": "John Snow"
     },
     "derivedFrom": [
         {

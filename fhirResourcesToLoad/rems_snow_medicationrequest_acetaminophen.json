@@ -42,7 +42,7 @@
   },
   "subject": {
     "reference": "Patient/pat017",
-    "display": "Jon Snow"
+    "display": "John Snow"
   },
   "authoredOn": "2023-06-05",
   "requester": {

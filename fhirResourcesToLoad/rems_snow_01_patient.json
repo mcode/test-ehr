@@ -7,17 +7,17 @@
     {
       "use": "home",
       "type": "both",
-      "state": "Westeros",
-      "city": "Winterfell",
-      "postalCode": "00008",
-      "line": ["1 Winterfell Rd"]
+      "state": "MA",
+      "city": "Boston",
+      "postalCode": "02134",
+      "line": ["205 Main St"]
     }
   ],
   "name": [
     {
       "use": "official",
       "family": "Snow",
-      "given": ["Jon", "Stark"]
+      "given": ["John"]
     }
   ],
   "identifier": [

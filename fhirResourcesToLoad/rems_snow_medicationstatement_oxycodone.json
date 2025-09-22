@@ -16,13 +16,13 @@
   },
   "subject": {
     "reference": "Patient/pat017",
-    "display": "Jon Snow"
+    "display": "John Snow"
   },
   "effectiveDateTime": "2022-07-20",
   "dateAsserted": "2022-01-22",
   "informationSource": {
     "reference": "Patient/pat017",
-    "display": "Jon Snow"
+    "display": "John Snow"
   },
   "dosage": [
     {
