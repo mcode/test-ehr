@@ -548,8 +548,8 @@
       "id" : "232e4607-8591-40c8-8ca8-1a365f63cadf",
       "type" : "password",
       "userLabel" : "My password",
-      "createdDate" : 1758653236610,
-      "secretData" : "{\"value\":\"rG9mG/894n/US3cS5pSlNf9QcMm1UbtsHQEif1fTsT0=\",\"salt\":\"OmGkO450NMfe5yOqL5fQKA==\",\"additionalParameters\":{}}",
+      "createdDate" : 1758653996291,
+      "secretData" : "{\"value\":\"vva41PowfDtg2JX0Q9wsTX1Y4q7C9/8HbFAd10OAN9w=\",\"salt\":\"e4j4iRZCnJqzyWatthKfxw==\",\"additionalParameters\":{}}",
       "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
     } ],
     "disableableCredentialTypes" : [ ],
@@ -1633,7 +1633,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "saml-user-property-mapper", "oidc-address-mapper", "oidc-full-name-mapper", "oidc-usermodel-property-mapper", "saml-user-attribute-mapper", "saml-role-list-mapper", "oidc-usermodel-attribute-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-address-mapper", "oidc-usermodel-property-mapper", "oidc-full-name-mapper", "saml-user-property-mapper", "oidc-usermodel-attribute-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper", "saml-user-attribute-mapper" ]
       }
     }, {
       "id" : "04e6b32d-3412-44dc-8026-639895a1d7aa",
@@ -1658,7 +1658,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper", "saml-role-list-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "oidc-address-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper" ]
+        "allowed-protocol-mapper-types" : [ "saml-role-list-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-full-name-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper" ]
       }
     } ],
     "org.keycloak.keys.KeyProvider" : [ {
