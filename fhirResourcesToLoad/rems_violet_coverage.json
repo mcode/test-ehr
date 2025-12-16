@@ -1,0 +1,23 @@
+{
+  "resourceType": "Coverage",
+  "id": "cov018",
+  "beneficiary": {
+    "reference": "Patient/pat018"
+  },
+  "status": "active",
+  "subscriberId": "1EG4TE5MK73",
+  "class": [
+    {
+      "type": {
+        "system": "http://hl7.org/fhir/coverage-class",
+        "code": "plan"
+      },
+      "value": "Medicare Part A"
+    }
+  ],
+  "payor": [
+    {
+      "reference": "Organization/org1234"
+    }
+  ]
+}
