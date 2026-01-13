@@ -1,0 +1,104 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "pat018-mr-IPledge-strange",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "6064",
+        "display": "Isotretinoin 20 MG Oral Capsule"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/ndc",
+        "code": "0245-0571-01"
+      }
+    ]
+  },
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/pat018",
+    "display": "Violet Gartner"
+  },
+  "authoredOn": "2026-01-15",
+  "requester": {
+    "reference": "Practitioner/pra-sstrange",
+    "display": "Stephen Strange"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "88616000",
+          "display": "Severe acne"
+        }
+      ],
+      "text": "Severe nodular acne - continued treatment after transfer"
+    }
+  ],
+  "insurance": [
+    {
+      "reference": "Coverage/cov018"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "sequence": 1,
+      "text": "40mg twice daily",
+      "timing": {
+        "repeat": {
+          "frequency": 2,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route (qualifier value)"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                "code": "ordered",
+                "display": "Ordered"
+              }
+            ]
+          },
+          "doseQuantity": {
+            "value": 40,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 60,
+      "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+      "code": "CAP"
+    },
+    "numberOfRepeatsAllowed": 3
+  },
+  "note": [
+    {
+      "text": "iPledge REMS program enrollment required. Patient transferred from previous care facility. New prescriber Dr. Stephen Strange will continue isotretinoin treatment."
+    }
+  ]
+}
