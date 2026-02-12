@@ -2,7 +2,7 @@
   "resourceType": "HealthcareService",
   "id": "pharm0111",
   "active": true,
-  "name": "Test Pharmacy",
+  "name": "RiteAid Pharmacy",
   "category": [
     {
       "coding": [
@@ -28,7 +28,7 @@
   "location": [
     {
       "reference": "Location/pharm-location-001",
-      "display": "123 Main Street, Anytown, CA 12345"
+      "display": "123 Main Street, Detroit, MI 48224"
     }
   ]
 }

@@ -404,7 +404,7 @@
   "otpPolicyLookAheadWindow" : 1,
   "otpPolicyPeriod" : 30,
   "otpPolicyCodeReusable" : false,
-  "otpSupportedApplications" : [ "totpAppMicrosoftAuthenticatorName", "totpAppFreeOTPName", "totpAppGoogleName" ],
+  "otpSupportedApplications" : [ "totpAppFreeOTPName", "totpAppGoogleName", "totpAppMicrosoftAuthenticatorName" ],
   "webAuthnPolicyRpEntityName" : "keycloak",
   "webAuthnPolicySignatureAlgorithms" : [ "ES256" ],
   "webAuthnPolicyRpId" : "",
@@ -533,13 +533,13 @@
   }, {
     "id" : "d6999f64-7165-4742-8a69-44f719d6783f",
     "createdTimestamp" : 1654609729216,
-    "username" : "jonsnow",
+    "username" : "johnsnow",
     "enabled" : true,
     "totp" : false,
     "emailVerified" : false,
-    "firstName" : "Jon",
+    "firstName" : "John",
     "lastName" : "Snow",
-    "email" : "jon@example.com",
+    "email" : "john@example.com",
     "attributes" : {
       "patientId" : [ "pat017" ],
       "userId" : [ "pat017" ]
@@ -547,8 +547,9 @@
     "credentials" : [ {
       "id" : "232e4607-8591-40c8-8ca8-1a365f63cadf",
       "type" : "password",
-      "createdDate" : 1654609739752,
-      "secretData" : "{\"value\":\"Xq7cH7ifZxji7HbjOCvADrZayo4ioDay727u7Rb2bXM=\",\"salt\":\"mXdOhvm6+MkT7rXj0z76Wg==\",\"additionalParameters\":{}}",
+      "userLabel" : "My password",
+      "createdDate" : 1758653996291,
+      "secretData" : "{\"value\":\"vva41PowfDtg2JX0Q9wsTX1Y4q7C9/8HbFAd10OAN9w=\",\"salt\":\"e4j4iRZCnJqzyWatthKfxw==\",\"additionalParameters\":{}}",
       "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
     } ],
     "disableableCredentialTypes" : [ ],
@@ -872,11 +873,16 @@
   }, {
     "id" : "2377b208-3490-43cd-80ae-6aa738e70ff8",
     "clientId" : "pims-login",
+    "name" : "",
+    "description" : "",
+    "rootUrl" : "",
+    "adminUrl" : "",
+    "baseUrl" : "",
     "surrogateAuthRequired" : false,
     "enabled" : true,
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
-    "redirectUris" : [ "http://localhost:3006" ],
+    "redirectUris" : [ "http://localhost:5050/*" ],
     "webOrigins" : [ "*" ],
     "notBefore" : 0,
     "bearerOnly" : false,
@@ -889,28 +895,30 @@
     "frontchannelLogout" : false,
     "protocol" : "openid-connect",
     "attributes" : {
-      "id.token.as.detached.signature" : "false",
-      "saml.assertion.signature" : "false",
       "saml.force.post.binding" : "false",
       "saml.multivalued.roles" : "false",
-      "saml.encrypt" : "false",
       "post.logout.redirect.uris" : "+",
       "oauth2.device.authorization.grant.enabled" : "false",
       "backchannel.logout.revoke.offline.tokens" : "false",
-      "saml.server.signature" : "false",
       "saml.server.signature.keyinfo.ext" : "false",
       "use.refresh.tokens" : "true",
-      "exclude.session.state.from.auth.response" : "false",
       "oidc.ciba.grant.enabled" : "false",
-      "saml.artifact.binding" : "false",
       "backchannel.logout.session.required" : "true",
       "client_credentials.use_refresh_token" : "false",
-      "saml_force_name_id_format" : "false",
       "require.pushed.authorization.requests" : "false",
       "saml.client.signature" : "false",
+      "id.token.as.detached.signature" : "false",
+      "saml.assertion.signature" : "false",
+      "saml.encrypt" : "false",
+      "saml.server.signature" : "false",
+      "exclude.session.state.from.auth.response" : "false",
+      "saml.artifact.binding" : "false",
+      "saml_force_name_id_format" : "false",
       "tls.client.certificate.bound.access.tokens" : "false",
+      "acr.loa.map" : "{}",
       "saml.authnstatement" : "false",
       "display.on.consent.screen" : "false",
+      "token.response.type.bearer.lower-case" : "false",
       "saml.onetimeuse.condition" : "false"
     },
     "authenticationFlowBindingOverrides" : { },
@@ -1632,7 +1640,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "saml-user-property-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-role-list-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper" ]
+        "allowed-protocol-mapper-types" : [ "saml-role-list-mapper", "oidc-usermodel-property-mapper", "oidc-full-name-mapper", "oidc-address-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper", "oidc-usermodel-attribute-mapper", "oidc-sha256-pairwise-sub-mapper" ]
       }
     }, {
       "id" : "04e6b32d-3412-44dc-8026-639895a1d7aa",
@@ -1657,7 +1665,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper", "oidc-usermodel-property-mapper", "oidc-address-mapper", "saml-user-attribute-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-usermodel-attribute-mapper", "saml-user-attribute-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-address-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-property-mapper", "oidc-full-name-mapper" ]
       }
     } ],
     "org.keycloak.keys.KeyProvider" : [ {

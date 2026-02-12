@@ -17,37 +17,37 @@
           {
             "system": "http://terminology.hl7.org/3.1.0/CodeSystem-v2-0203",
             "code": "MD"
-
           }
         ]
       },
-      "value": "555123555"
+      "system": "http://michigan.gov/medical-license",
+      "value": "MI4804444444"
     }
   ],
   "address": [
     {
-      "use": "home",
+      "use": "work",
       "type": "both",
-      "state": "NY",
-      "city": "Buffalo",
-      "postalCode": "14210",
-      "line": ["840 Seneca St"]
+      "state": "MI",
+      "city": "Detroit",
+      "postalCode": "48224",
+      "line": ["18051 Mack Avenue"]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "716-873-1557",
+      "value": "(555) 384-4444",
       "rank": 1
     },
     {
       "system": "email",
-      "value": "jane.betty@myhospital.com",
+      "value": "jane.betty@motorcitysnf.com",
       "rank": 2
     },
     {
       "system": "fax",
-      "value": "555-123-4567",
+      "value": "(555) 384-4445",
       "rank": 3
     }
   ],
