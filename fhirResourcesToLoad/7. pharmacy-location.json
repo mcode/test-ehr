@@ -2,8 +2,8 @@
   "resourceType": "Location",
   "id": "pharm-location-001",
   "status": "active",
-  "name": "Test Pharmacy - Main Location",
-  "description": "Main location for Test Pharmacy providing community pharmacy services",
+  "name": "PIMS Pharmacy A - Main Location",
+  "description": "Main location for PIMS Pharmacy A providing community pharmacy services",
   "mode": "instance",
   "address": {
     "use": "work",
@@ -11,9 +11,9 @@
     "line": [
       "123 Main Street"
     ],
-    "city": "Detroit",
-    "state": "MI",
-    "postalCode": "48224",
+    "city": "Boston",
+    "state": "MA",
+    "postalCode": "02134",
     "country": "US"
   },
   "telecom": [

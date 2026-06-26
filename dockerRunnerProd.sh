@@ -4,7 +4,10 @@
 trap "kill $LOAD_DATA_PID $SERVER_PID; gradle --stop; exit" INT
 
 # Set environment variables
-mkdir logs 
+RUN_PROJECT_CACHE=/tmp/test-ehr-gradle-project-cache/run
+LOAD_DATA_PROJECT_CACHE=/tmp/test-ehr-gradle-project-cache/load-data
+
+mkdir -p logs
 # Reset log file content for new application boot
 echo "*** Logs for 'gradle bootRun' ***" > ./logs/runner.log
 
@@ -16,14 +19,13 @@ echo "Starting application in production mode..."
     sleep 1
 done
 echo "loading data into test-ehr..."
-gradle loadData ) & LOAD_DATA_PID=$!
+gradle --project-cache-dir "$LOAD_DATA_PROJECT_CACHE" loadData ) & LOAD_DATA_PID=$!
 
 # Start server process 
 echo "starting test-ehr server..."
-( gradle bootRun 2>&1 | tee ./logs/runner.log ) & SERVER_PID=$!
+( gradle --project-cache-dir "$RUN_PROJECT_CACHE" bootRun 2>&1 | tee ./logs/runner.log ) & SERVER_PID=$!
 
 # Handle application background process exiting
 wait $SERVER_PID $LOAD_DATA_PID
 EXIT_CODE=$?
 echo "application exited with exit code $EXIT_CODE..."
-
