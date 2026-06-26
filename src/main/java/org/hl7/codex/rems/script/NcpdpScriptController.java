@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.hl7.fhir.r4.model.MedicationRequest;
+import org.hl7.fhir.r4.model.Annotation;
 import org.hl7.fhir.r4.model.MedicationDispense;
 import org.hl7.fhir.r4.model.Reference;
 
@@ -80,6 +81,9 @@ public class NcpdpScriptController {
         logger.info("    PrescriberOrderNumber: " + header.getPrescriberOrderNumber());
         logger.info("    Dispensed Status: " + dispensedStatus);
 
+        String note = rxFill.getFillStatus().getDispensedStatus().Note;
+        logger.info("    Dispensed Note: " + note);
+
         IFhirResourceDao<MedicationRequest> medicationRequestDao = 
             jpaRestfulServer.getDao(MedicationRequest.class);
         IFhirResourceDao<MedicationDispense> medicationDispenseDao = 
@@ -114,6 +118,7 @@ public class NcpdpScriptController {
             medicationDispense.setMedication(medicationRequest.getMedication());
             medicationDispense.setSubject(medicationRequest.getSubject());
             medicationDispense.addAuthorizingPrescription(new Reference(requestId));
+            medicationDispense.addNote(new Annotation().setText(note));
 
             // store the MedicationDispense
             RequestDetails dispenseDetails = new SystemRequestDetails();
@@ -130,7 +135,7 @@ public class NcpdpScriptController {
             case PARTIALLY_DISPENSED:
                 return MedicationDispense.MedicationDispenseStatus.INPROGRESS;
             case NOT_DISPENSED:
-                return MedicationDispense.MedicationDispenseStatus.PREPARATION;
+                return MedicationDispense.MedicationDispenseStatus.ONHOLD;
             case TRANSFERRED:
             case UNKNOWN:
             default:

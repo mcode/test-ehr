@@ -61,5 +61,18 @@ public class FillStatus {
             return DispensedStatusEnum.UNKNOWN;
         }
     }
-    
+
+    public DispensedStatus getDispensedStatus() {
+        if (getDispensed() != null) {
+            return getDispensed();
+        } else if (getPartiallyDispensed() != null) {
+            return getPartiallyDispensed();
+        } else if (getNotDispensed() != null) {
+            return getNotDispensed();
+        } else if (getTransferred() != null) {
+            return getTransferred();
+        } else {
+            return null;
+        }
+    }
 }
