@@ -1,0 +1,53 @@
+{
+  "resourceType": "Medication",
+  "id": "med-pexidartinib-generic",
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "2183126",
+        "display": "Pexidartinib Hydrochloride 200 MG Oral Capsule"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/ndc",
+        "code": "99999-407-20",
+        "display": "Pexidartinib Hydrochloride"
+      }
+    ],
+    "text": "Pexidartinib Hydrochloride 200 MG Oral Capsule"
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385055001",
+        "display": "Capsule dose form"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "774167006",
+            "display": "Pexidartinib"
+          }
+        ]
+      },
+      "strength": {
+        "numerator": {
+          "value": 200,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+          "code": "CAP"
+        }
+      }
+    }
+  ]
+}

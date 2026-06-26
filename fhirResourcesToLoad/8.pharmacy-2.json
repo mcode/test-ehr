@@ -2,7 +2,7 @@
   "resourceType": "HealthcareService",
   "id": "pharm4321",
   "active": true,
-  "name": "Test Pharmacy #2",
+  "name": "PIMS Pharmacy B",
   "category": [
     {
       "coding": [
@@ -27,8 +27,8 @@
   ],
   "location": [
     {
-      "reference": "Location/pharm-location-001",
-      "display": "561 Street Road, Anytown, CA 12345"
+      "reference": "Location/pharm-location-002",
+      "display": "456 Central Street, Cambridge, MA 02139"
     }
   ]
 }

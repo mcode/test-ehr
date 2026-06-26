@@ -3,9 +3,22 @@ FROM gradle:6.9.0-jdk11
 
 # Set working directory so that all subsequent command runs in this folder
 WORKDIR /test-ehr
+
+ENV GRADLE_USER_HOME=/tmp/gradle-user-home
+
+USER root
+RUN mkdir -p /test-ehr/.gradle && chown -R gradle:gradle /test-ehr
+USER gradle
+
 # Copy app files to container
 COPY --chown=gradle:gradle . .
 RUN gradle build
+
+USER root
+RUN rm -rf /test-ehr/.gradle /tmp/gradle-user-home \
+    && mkdir -p /test-ehr/.gradle /tmp/gradle-user-home \
+    && chmod 0777 /test-ehr/.gradle /tmp/gradle-user-home
+
 # Expose port to access the app
 EXPOSE 8080
 

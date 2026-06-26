@@ -7,9 +7,9 @@
     {
       "use": "home",
       "type": "both",
-      "state": "Wonderland",
-      "city": "Wonderland",
-      "postalCode": "12345",
+      "state": "MA",
+      "city": "Somerville",
+      "postalCode": "02143",
       "line": ["47 Main St"]
     }
   ],

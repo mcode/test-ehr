@@ -1,19 +1,19 @@
 {
   "resourceType": "Location",
-  "id": "pharm-location-001",
+  "id": "pharm-location-002",
   "status": "active",
-  "name": "Test Pharmacy - Secondary Location",
-  "description": "Secondary location for Test Pharmacy providing community pharmacy services",
+  "name": "PIMS Pharmacy B",
+  "description": "Second PIMS pharmacy location for product availability testing",
   "mode": "instance",
   "address": {
     "use": "work",
     "type": "physical",
     "line": [
-      "561 Street Road"
+      "456 Central Street"
     ],
-    "city": "Anytown",
-    "state": "CA",
-    "postalCode": "12345",
+    "city": "Cambridge",
+    "state": "MA",
+    "postalCode": "02139",
     "country": "US"
   },
   "telecom": [

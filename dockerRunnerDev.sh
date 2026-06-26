@@ -4,7 +4,11 @@
 trap "kill $LOAD_DATA_PID $CONTINUOUS_BUILD_PID $SERVER_PID; gradle --stop; exit" INT
 
 # Set environment variables
-mkdir logs 
+BUILD_PROJECT_CACHE=/tmp/test-ehr-gradle-project-cache/build
+RUN_PROJECT_CACHE=/tmp/test-ehr-gradle-project-cache/run
+LOAD_DATA_PROJECT_CACHE=/tmp/test-ehr-gradle-project-cache/load-data
+
+mkdir -p logs
 # Reset log file content for new application boot
 echo "*** Logs for 'gradle installBootDist --continuous' ***" > ./logs/builder.log
 echo "*** Logs for 'gradle bootRun' ***" > ./logs/runner.log
@@ -18,7 +22,7 @@ echo "Starting continuous data loader..."
     sleep 1
 done
 echo "loading data into test-ehr..."
-gradle loadData
+gradle --project-cache-dir "$LOAD_DATA_PROJECT_CACHE" loadData
 
 # Continuous Load Data command whenever fhirResourcesToLoad directory changes
 resources_modify_time=$(stat -c %Y fhirResourcesToLoad)
@@ -29,7 +33,7 @@ do
     if [[ "$resources_modify_time" != "$new_resources_modify_time" ]] 
     then
         echo "loading data into test-ehr..."
-        gradle loadData
+        gradle --project-cache-dir "$LOAD_DATA_PROJECT_CACHE" loadData
     fi
 
     resources_modify_time=$new_resources_modify_time
@@ -38,14 +42,14 @@ done ) & LOAD_DATA_PID=$!
 
 # Start the continious build listener process
 echo "starting continuous build listener..."
-( gradle build --continuous | tee ./logs/builder.log ) & CONTINUOUS_BUILD_PID=$!
+( gradle --project-cache-dir "$BUILD_PROJECT_CACHE" build --continuous | tee ./logs/builder.log ) & CONTINUOUS_BUILD_PID=$!
 
 # Start server process once initial build finishes  
 ( while ! grep -m1 'BUILD SUCCESSFUL' < ./logs/builder.log; do
     sleep 1
 done
 echo "starting test-ehr server in debug mode..."
-gradle bootRun -Pdebug 2>&1 | tee ./logs/runner.log ) & SERVER_PID=$!
+gradle --project-cache-dir "$RUN_PROJECT_CACHE" bootRun -Pdebug 2>&1 | tee ./logs/runner.log ) & SERVER_PID=$!
 
 
 
@@ -53,4 +57,3 @@ gradle bootRun -Pdebug 2>&1 | tee ./logs/runner.log ) & SERVER_PID=$!
 wait $CONTINUOUS_BUILD_PID $SERVER_PID $LOAD_DATA_PID
 EXIT_CODE=$?
 echo "application exited with exit code $EXIT_CODE..."
-

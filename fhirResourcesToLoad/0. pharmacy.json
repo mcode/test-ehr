@@ -2,7 +2,7 @@
   "resourceType": "HealthcareService",
   "id": "pharm0111",
   "active": true,
-  "name": "RiteAid Pharmacy",
+  "name": "PIMS Pharmacy A",
   "category": [
     {
       "coding": [
@@ -28,7 +28,7 @@
   "location": [
     {
       "reference": "Location/pharm-location-001",
-      "display": "123 Main Street, Detroit, MI 48224"
+      "display": "123 Main Street, Boston, MA 02134"
     }
   ]
 }
