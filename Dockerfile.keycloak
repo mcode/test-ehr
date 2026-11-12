@@ -1,3 +1,9 @@
-FROM artifacts.mitre.org/docker/keycloak/keycloak:26.8.1
+FROM artifacts.mitre.org/docker/keycloak/keycloak:26.8.2-1
+ADD --checksum=sha256:b530942257fb935f8b2cfaa5f8eb5bd59c555fd8e8d01b8ce98912e077ea606c --chmod=0644 \
+    https://artifacts.mitre.org/artifactory/java/com/google/guava/guava/33.7.2-jre/guava-33.7.2-jre.jar \
+    /opt/keycloak/lib/lib/main/com.google.guava.guava-33.6.0-jre.jar
+ADD --checksum=sha256:42604178b9e57ec08ee0035079961516f086e455d0141f0b22c6eff29fb2fff4 --chmod=0644 \
+    https://artifacts.mitre.org/artifactory/java/org/mariadb/jdbc/mariadb-java-client/3.5.11/mariadb-java-client-3.5.11.jar \
+    /opt/keycloak/lib/lib/main/org.mariadb.jdbc.mariadb-java-client-3.5.10.jar
 HEALTHCHECK --interval=30s --start-period=15s --timeout=10m --retries=10 CMD bash -c 'echo -n > /dev/tcp/127.0.0.1/8080'
 COPY ./src/main/resources/ClientFhirServerRealm.json /opt/keycloak/data/import/ClientFhirServerRealm.json
